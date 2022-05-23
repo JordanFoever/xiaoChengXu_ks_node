@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/movie/movie",
+    "pages/my/my",
+    "pages/datails/datails"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "淘票票",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#fb5268",
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "./icon/movie2.png",
+        "selectedIconPath": "./icon/movie1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./icon/me2.png",
+        "selectedIconPath": "./icon/me1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

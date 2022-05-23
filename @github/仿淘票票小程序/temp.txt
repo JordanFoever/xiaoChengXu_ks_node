@@ -1,0 +1,17 @@
+02700614098
+INSERT into find(title,author,timage,time,content,address,aimage) VALUES('老卫说电影','老魏','http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/image/find/a3.jpg','2011-11-11 11:11:11','喜欢你就是喜欢你','武汉','http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/image/find/t3.jpg');
+INSERT into find(title,author,timage,time,content,address,aimage) VALUES('T1战队延迟21图”火了，拳头偷偷修改公告，大师兄都看不下去了','老魏','http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/image/weifind/title/a1.jpg','2011-11-11 11:11:11','喜欢你就是喜欢你','武汉','http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/image/weifind/author/a1.jpg');
+图片的地址(aimage):http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/image/weifind/author/a1.jpg
+	(timage):http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/image/weifind/title/a1.jpg
+		
+
+git 提交
+git init 
+git add *
+git commit -m "备注"
+git remote -v(查看别名)
+之前取过别名的话,直接用这个就可以了
+git push origin master 
+
+
+git reset --hard 512d577 

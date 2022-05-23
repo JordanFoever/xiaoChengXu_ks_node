@@ -1,0 +1,63 @@
+<view class="model">
+
+
+	<!-- 顶部导航 -->
+	<view class="nav">
+		<view class="nav_list {{select[index] ? 'select' : ''}}" wx:for="{{navList}}" wx:key="index" bindtap="navClick" data-index="{{index}}">{{item}}</view>
+	</view>
+	
+	<!-- 正在热映页面 -->
+	<view class="now" wx:if="{{select[0]}}">
+
+		<!-- 轮播图 -->
+		<swiper indicator-dots autoplay circular indicator-color="rgba(255,255,255,.3)" indicator-active-color="#FFFFFF" interval="3000" class="swiper">
+			<swiper-item wx:for="{{imageList}}" wx:key="index"><image src="{{item}}"></image></swiper-item>
+		</swiper>
+
+		<!-- 影片列表 -->
+		<view class="movie">
+			<view class="movie_list" wx:for="{{list}}" wx:key="index" bindtap="jumpDetails" data-id="{{item.id}}">
+				<image src="{{item.image}}"></image>
+				<view class="movie_info">
+					<view class="title">{{item.title}}</view>
+					<view class="info_item">导演：{{item.director}}</view>
+					<view class="info_item">主演：{{item.actors}}</view>
+					<view class="info_item">上映时间：{{item.year}}</view>
+				</view>
+				<view class="purchase">购票</view>
+			</view>
+		</view>
+	</view>
+	
+	<!-- 即将上映页面 -->
+	<view class="future" wx:if="{{select[1]}}">
+		<view class="type_title">星推荐</view>
+		<scroll-view scroll-x="{{true}}" class="scroll_view">
+			<block wx:for="{{futureList}}" wx:key="index">
+				<view class="future_list">
+					<image src="{{item.image}}"></image>
+					<view class="future_info">
+						<view class="future_title">{{item.title}}</view>
+						<view>{{item.year}}</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+
+		
+		<view class="type_title">影片列表</view>
+		<view class="movie">
+			<view class="movie_list" wx:for="{{list}}" wx:key="index" bindtap="jumpDetails" data-id="{{item.id}}">
+				<image src="{{item.image}}"></image>
+				<view class="movie_info">
+					<view class="title">{{item.title}}</view>
+					<view class="info_item">导演：{{item.director}}</view>
+					<view class="info_item">主演：{{item.actors}}</view>
+					<view class="info_item">上映时间：{{item.year}}</view>
+				</view>
+				<view class="purchase">购票</view>
+			</view>
+		</view>
+	</view>
+
+</view>

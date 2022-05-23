@@ -1,0 +1,52 @@
+<view class="details">
+
+	<!-- 影片详细数据 -->
+	<view class="movie">
+		<view class="movie_pictex">
+			<view class="movie_text">
+				<view class="movie_title">{{movieData.title}}</view>
+				<view class="movie_info">影片时长：{{movieData.timeLong}}</view>
+				<view class="movie_info">上映时间：{{movieData.year}}</view>
+				<view class="movie_info">类型：{{movieData.typeLabel}}</view>
+				<view class="movie_info">导演：{{movieData.dire}}</view>
+				<view class="movie_info">演员列表：</view>
+			</view>
+			<image class="movie_pic" src="{{movieData.image}}"></image>
+		</view>
+
+		<!-- 演员列表 -->
+		<scroll-view scroll-x="{{true}}" class="scroll_view">
+			<block wx:for="{{movieData.actors}}">
+				<view class="actors">
+					<image src="{{item.cover_url}}"></image>
+					<view>{{item.name}}</view>
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+
+	<!-- 影片标签数据 -->
+	<view class="label">
+		<view class="label_title">影片标签</view>
+		<view class="label_content">
+			<view class="label_item" wx:for="{{labelData}}">{{item}}</view>
+		</view>		
+	</view>
+
+	<!-- 影片短评数据 -->
+	<view class="comment">
+		<view class="label_title">影片热评</view>
+		<view wx:for="{{commentData}}">
+			<view class="comment_list">
+				<image src="{{item.user.avatar}}" class="user_head"></image>
+				<view class="comment_info">
+					<view class="user_name">{{item.user.name}}</view>
+					<view class="create_time">{{item.create_time}}</view>
+					<view>{{item.comment}}</view>
+				</view>
+			</view>
+			<image src="../../image/分割线.png" class="line"></image>
+		</view>
+	</view>
+
+</view>
